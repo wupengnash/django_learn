@@ -1,4 +1,4 @@
-"""myfirst URL Configuration
+"""zqxt_tmpl URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.9/topics/http/urls/
@@ -15,13 +15,8 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from myHello import views
 
 urlpatterns = [
-    # url(r'^admin/', admin.site.urls),
-    # url(r'^$',views.hello,name = 'hello'),
-    url(r'^add/',views.add,name = 'add'),
-    url(r'^add2/(\+d)/(\+d)$',views.add2,name = 'add2'),
-    url(r'^add2/(\d+)/(\d+)/$', views.old_add2_redirect),
-    url(r'^new_add/(\d+)/(\d+)/$', views.add2, name='add2'),
+    url(r'^$',views.home,name='home'),
+    url(r'^admin/', include(admin.site.urls)),
 ]
